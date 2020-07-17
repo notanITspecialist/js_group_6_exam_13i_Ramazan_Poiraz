@@ -23,6 +23,11 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    role: {
+        type: String,
+        enum: ['user', 'admin'],
+        default: 'user'
+    },
     avatar: String
 });
 
@@ -46,6 +51,6 @@ UserSchema.methods.addToken = function () {
     this.token = nanoid();
 };
 
-const User = mongoose.model('user', UserSchema);
+const User = mongoose.model('User', UserSchema);
 
 module.exports = User;
