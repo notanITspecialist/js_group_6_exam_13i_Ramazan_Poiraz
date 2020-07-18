@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const config = require('./config');
 
 const user = require('./app/user');
+const institution = require('./app/institution');
+const image = require('./app/image');
+const review = require('./app/review');
 
 const app = express();
 
@@ -15,9 +18,14 @@ const init = async () => {
     await mongoose.connect(config.baseUrl,config.baseConfig);
 
     app.use('/user', user);
+    app.use('/institution', institution)
+    app.use('/image', image);
+    app.use('/review', review);
+
+
 
     app.listen(config.port, () => {
-        console.log('Server started on 8000 host!');
+        console.log(`Server started on ${config.port} host!`);
     });
 };
 
