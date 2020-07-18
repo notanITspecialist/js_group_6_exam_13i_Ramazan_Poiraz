@@ -7,6 +7,7 @@ import {Button} from "@material-ui/core";
 import Avatar from "@material-ui/core/Avatar";
 import Box from "@material-ui/core/Box";
 import {logoutUser} from "../../store/actions/user";
+import {NavLink} from "react-router-dom";
 
 
 const UserBar = () => {
@@ -26,6 +27,22 @@ const UserBar = () => {
 
     return (
         <>
+            <Button
+                color='primary'
+                component={NavLink}
+                to='/addInstitution'
+                id='addInstitution'
+                exact
+                style={{
+                    color: 'white',
+                    fontWeight: 'bold',
+                    padding: '10px 15px 10px 10px'
+                }}
+                activeClassName='Mui-disabled'
+            >
+                Add institution
+            </Button>
+
             <Button
                 onClick={handleMenu}
                 color="inherit"
