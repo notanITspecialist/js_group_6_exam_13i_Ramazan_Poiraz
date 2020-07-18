@@ -17,7 +17,7 @@ When('я заполняю поля формы:', table => {
 });
 
 When('я вижу текст {string}', text => {
-    I.waitForText(text, 1);
+    I.waitForText(text, 3);
 });
 
 When('я заполняю поля формы добавления:', table => {
