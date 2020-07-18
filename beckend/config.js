@@ -6,9 +6,13 @@ const env = process.env.NODE_ENV;
 let database = 'mongodb://localhost/exam13';
 let port = 8000;
 
+
+
 if (env === 'test') {
+
     database = 'mongodb://localhost/exam13-test';
     port = 8010;
+
 }
 
 module.exports = {
