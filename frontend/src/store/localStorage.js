@@ -1,4 +1,4 @@
-import {LOGIN_USER_RES, REG_USER_RES} from "./actions/user";
+import {LOGIN_USER_RES, LOGOUT_USER_RES, REG_USER_RES} from "./actions/user";
 
 
 export const saveToLocalStorage = state => {
@@ -22,7 +22,7 @@ export const loadFromLocalStorage = () => {
     }
 };
 
-const actions = ["LOGOUT_USER", LOGIN_USER_RES, REG_USER_RES];
+const actions = [LOGIN_USER_RES, REG_USER_RES, LOGOUT_USER_RES];
 
 export const localStorageMiddleware = store => next => action => {
     let result = next(action);
