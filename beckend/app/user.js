@@ -44,11 +44,11 @@ router.post('/sessions', async (req, res) => {
         const user = await User.findOne({username: req.body.username});
 
         if (!user) {
-            return res.status(404).send({message: 'Username or password not correct!'});
+            return res.status(404).send({message: 'Username or password not correct! user'});
         } else {
             const correctPassword = await bcrypt.compare(req.body.password, user.password);
             if (!correctPassword) {
-                return res.status(404).send({message: 'Username or password not correct!'});
+                return res.status(404).send({message: 'Username or password not correct! password'});
             }
         }
         user.addToken();
